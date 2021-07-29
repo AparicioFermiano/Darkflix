@@ -1,0 +1,42 @@
+.logo{
+  width: 7rem;
+}
+.header-person{
+  color: #faf9f9;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400;
+  z-index: 1000;
+  position: fixed;
+}
+.nav-link:hover{
+  color: #b6b6b6 !important;
+}
+.icon, .icon > a{
+  font-size: 1.6em;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-person{
+  padding: 0 !important;
+  right: 0;
+  left: auto !important;
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.713);
+  width: 14rem !important;
+
+}
+.box-dropbox{
+  border: 1px solid #303030;
+}
+.dropdown-item:hover{
+  background-color: transparent;
+  text-decoration:underline !important
+
+}
+.video{
+  min-width: 100%;
+
+}
+
+
+
