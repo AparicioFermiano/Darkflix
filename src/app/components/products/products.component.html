@@ -1,6 +1,6 @@
 <main>
-  <div class="container-fluid m-0 p-0">
-    <div class="container-fluid info-product">
+  <div class="container-fluid m-0 px-0">
+    <div class="container-fluid info-product px-5 mx-0">
       <img class="title-product" src="../../../assets/image/coraline-logo.png" alt="">
       <div class="description-product">
         Coraline consegue abrir uma porta que sempre estivera trancada e descobre um caminho para um misterioso apartamento.
@@ -23,10 +23,12 @@
           </div>
         </div>
       </div>
+
     </div>
 
     <video class="video" autoplay loop [muted]="videoMuted">
       <source src="../../../assets/video/coraline_c1.mp4" type="video/mp4">
     </video>
   </div>
+  <router-outlet></router-outlet>
 </main>

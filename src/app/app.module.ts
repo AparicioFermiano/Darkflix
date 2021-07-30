@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
 
 
 @NgModule({
