@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Coraline: O mundo Sombrio",
+      "image": "../../assets/image/watch01.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Coraline: O mundo Sombrio",
+      "image": "../../assets/image/watch02.jpg"
+    }
+  ]
+}
