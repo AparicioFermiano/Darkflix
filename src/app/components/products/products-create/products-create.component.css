@@ -1,0 +1,56 @@
+input, input:focus {
+  border: none;
+}
+label{
+  color: rgb(230, 230, 230);
+}
+
+/* BACKGROUND */
+
+.bg-products{
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  height: 100vh;
+  background-size: cover;
+  background: url("../../../../assets/image/bg-products.jpg") no-repeat fixed;
+}
+
+/* CARD */
+
+.card{
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.form-person {
+  background-color: #333 !important;
+  color: #ffffff;
+}
+
+.form-person:hover {
+  background-color: rgb(60, 60, 60) !important;
+}
+
+.btn-cancel{
+  background-color: #000000;
+}
+.btn-cancel:hover{
+  background-color: rgb(14, 14, 14);
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.btn-share{
+  background-color: #a50000;
+}
+.btn-share:hover{
+  background-color: rgb(128, 2, 2);
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+

@@ -1,9 +1,10 @@
 /* COMPONENTS DEFAULT */
 
 body, html {
-  background-color: #141414;
+  background-color: #141414 !important;
   font-size: 14px;
-  user-select: noneB;
+  user-select: none;
+  -webkit-text-size-adjust: 100%;
 }
 
 hr{
@@ -12,22 +13,39 @@ hr{
   border-top: 1px solid rgb(223, 223, 223);
 }
 
+input{
+  font-size: 1.4rem !important;
+  padding: 0.5rem !important;
+}
+
+label{
+  font-size: 1.1rem !important;
+}
+
+/* OTHERS */
+
+.mask{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 /* BUTTON */
 
-button:focus, button:active, button::after {
-  outline: 0;
-  box-shadow: 0 0 0 0.15rem rgba(250, 250, 250, 0.7) !important;
-}
-.active{
-  border: none;
-  font-weight: 700;
+.btn-person{
+  padding: 0.6rem 1.4rem !important;
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
 }
 
 /* BACKGROUND */
 
 .bg-color-init{
   background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.55) 15%, rgba(0,0,0,0.45) 30%, rgba(0,0,0,0.35) 45%, rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 0.172) 70%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.70) 20%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.35) 65%, rgba(0, 0, 0, 0.25) 80%, rgba(0, 0, 0, 0.172) 85%, rgba(255,255,255,0) 100%);
   -webkit-transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
@@ -37,11 +55,40 @@ button:focus, button:active, button::after {
 .bg-dark-person{
   background-color: rgb(20, 20, 20);
   -webkit-transition: 0.3s ease-in;
--moz-transition: 0.3s ease-in;
--o-transition: 0.3s ease-in;
-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 
 /* POSITION */
+
+.pt-header{
+  padding-top: 8rem;
+}
+.container-verticle{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+/* FOCUS, AFTER< ACTIVE */
+
+button:focus, button:active, button::after,
+input:focus, input:active, input::after {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0.15rem rgba(250, 250, 250, 0.7) !important;
+}
+
+input:focus, input:active, input::after {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.active{
+  border: none;
+  font-weight: 700;
+}
+
+
 
 
