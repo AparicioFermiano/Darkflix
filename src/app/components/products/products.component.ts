@@ -15,7 +15,9 @@ export class ProductsComponent implements OnInit {
 
   Mutar() {
     this.videoMuted == true
-      ? (this.videoMuted = false)
-      : (this.videoMuted = true);
+      ? (this.videoMuted = false) : (this.videoMuted = true);
   }
+
+
+
 }

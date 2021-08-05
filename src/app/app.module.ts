@@ -13,7 +13,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
 
   ],
   imports: [
@@ -21,7 +21,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     AppRoutingModule,
     MaterialModule,
     ProductsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
     {

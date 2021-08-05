@@ -1,5 +1,5 @@
-input, input:focus {
-  border: none;
+input, input:focus, textarea, textarea:focus {
+  border: 2px solid #333;
 }
 label{
   color: rgb(230, 230, 230);
@@ -22,13 +22,14 @@ label{
   background-color: rgba(0, 0, 0, 0.75) !important;
 }
 
-.form-person {
+.form-person{
+  color: #ffffff !important;
   background-color: #333 !important;
-  color: #ffffff;
 }
 
 .form-person:hover {
   background-color: rgb(60, 60, 60) !important;
+  border: 2px solid rgb(60, 60, 60);
 }
 
 .btn-cancel{
@@ -52,5 +53,7 @@ label{
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
 }
+
+
 
 

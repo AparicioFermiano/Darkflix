@@ -4,30 +4,52 @@
     <div class="row">
       <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 mx-auto">
         <div class="card p-5 text-white">
-          <h1 class="text-center text-white pb-4">Criando um Produto</h1>
-          <form class="form">
-            <label class="form-label px-1" for="form1">Título</label>
-            <input type="text" id="form1" class="form-control form-person px-3 mb-4"/>
-            <label class="form-label px-1" for="form1">Descrição</label>
-            <input type="text" id="form1" class="form-control form-person px-3 mb-4" />
-            <label class="form-label px-1" for="form1">Capa</label>
-            <input type="text" id="form1" class="form-control form-person px-3 mb-4" />
+          <h1 class="text-center text-white">Postando um Produto</h1>
+
+          <form class="form" [formGroup]="FormProducts" (submit)="cadastrar()">
+            <div class="pt-4">
+              <label class="form-label px-1" for="title">Título</label>
+              <input type="text" id="title" class="form-control form-person px-3" formControlName="title" name="title" [ngClass]="FormProducts.controls.title.touched && FormProducts.controls.title.pristine ? 'border-invalid' : ''" >
+              <div class="h-mensage">
+                <small *ngIf="FormProducts.invalid == true && FormProducts.controls.title.touched && FormProducts.controls.title.pristine" id="title" class="form-text text-invalid">Preencha esse campo</small>
+              </div>
+            </div>
+            <div class="pt-1">
+              <label class="form-label px-1" for="description">Descrição</label>
+              <textarea class="form-control form-person px-3" id="description" rows="3" [ngClass]="FormProducts.controls.description.touched && FormProducts.controls.description.pristine ? 'border-invalid' : ''" formControlName="description" name="description"></textarea>
+              <div class="h-mensage">
+                <small *ngIf="FormProducts.invalid == true && FormProducts.controls.description.touched && FormProducts.controls.description.pristine" id="title" class="form-text text-invalid">Preencha esse campo</small>
+              </div>
+            </div>
+            <div class="pt-1">
+              <label class="form-label px-1" for="cover">Capa</label>
+              <input type="text" id="cover" class="form-control form-person" [ngClass]="{'border-invalid':FormProducts.controls.cover.invalid && FormProducts.controls.cover.touched, 'border-valid': FormProducts.controls.cover.valid}" formControlName="cover" name="cover">
+              <div class="h-mensage">
+                <small *ngIf="FormProducts.invalid == true && FormProducts.controls.cover.touched && FormProducts.controls.cover.pristine" id="title" class="form-text text-invalid">Preencha esse campo</small>
+              </div>
+            </div>
             <div class="row">
               <div class="col-6">
-                <label class="form-label px-1" for="form1">Example label</label>
-                <input type="text" id="form1" class="form-control form-person px-3 mb-4"  />
+                <label class="form-label px-1" for="category">Categoria</label>
+                <input type="text" id="category" class="form-control form-person px-3" [ngClass]="{'border-invalid':FormProducts.controls.category.invalid && FormProducts.controls.category.touched, 'border-valid': FormProducts.controls.category.valid}" formControlName="category" name="category">
+                <div class="h-mensage">
+                  <small *ngIf="FormProducts.invalid == true && FormProducts.controls.category.touched && FormProducts.controls.category.pristine" id="title" class="form-text text-invalid">Preencha esse campo</small>
+                </div>
               </div>
               <div class="col-6">
-                <label class="form-label px-1" for="form1">Example label</label>
-                <input type="text mb-4" id="form1" class="form-control form-person px-3" />
+                <label class="form-label px-1" for="classification">Classificação Indicativa</label>
+                <input type="text mb-4" id="classification" class="form-control form-person px-3" [ngClass]="{'border-invalid':FormProducts.controls.classification.invalid && FormProducts.controls.classification.touched, 'border-valid': FormProducts.controls.classification.valid}"formControlName="classification" name="classification">
+                <div class="h-mensage">
+                  <small *ngIf="FormProducts.invalid == true && FormProducts.controls.classification.touched && FormProducts.controls.classification.pristine" id="title" class="form-text text-invalid">Preencha esse campo</small>
+                </div>
               </div>
             </div>
-            <div class="justify-content-center d-flex">
-                <button class="btn btn-cancel text-white btn-person me-2">Cancelar</button>
-                <button class="btn btn-share text-white btn-person ms-2 w-100">Publicar</button>
+            <div class="justify-content-center d-flex pt-3">
+                <button class="btn btn-cancel text-white btn-person me-2" routerLink="/">Cancelar</button>
+                <button class="btn btn-share text-white btn-person ms-2 w-100" type="submit">Publicar</button>
             </div>
-
           </form>
+
         </div>
       </div>
     </div>
