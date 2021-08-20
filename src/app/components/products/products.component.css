@@ -48,11 +48,6 @@
 
 /* Botões do Banner */
 
-.btn-person{
-  padding: 0.2rem 3rem;
-  font-weight: 700;
-  font-size: 1.6em;
-}
 .icon{
   font-size: 35px;
 }
@@ -73,7 +68,7 @@
 .btn-muted{
   color: #ffffff;
   border: 1px solid #ffffff;
-  padding: 0 17px;
+  padding: 0 10px;
 }
 .btn-muted:hover{
   background-color: #ffffff20;

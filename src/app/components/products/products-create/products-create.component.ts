@@ -1,6 +1,9 @@
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ControlErrorService } from './../../../shared/control-error.service';
+import { ProductService } from './../../../services/product.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
+
 
 @Component({
   selector: 'ajr-products-create',
@@ -11,29 +14,69 @@ export class ProductsCreateComponent implements OnInit {
 
   public FormProducts!: FormGroup
 
-  constructor(private formBuilder: FormBuilder) {
 
-    this.FormProducts = this.formBuilder.group({
-      title: [null, [Validators.required, Validators.minLength(3)]],
-      description: [null, [Validators.required, Validators.minLength(3)]],
-      cover: [null, [Validators.required, Validators.minLength(3)]],
-      category: [null, [Validators.required, Validators.minLength(3)]],
-      classification: [null, [Validators.required, Validators.minLength(3)]],
-    })
+  // public categoryList =
+  // [{name: 'Arizona', abbrev: 'AZ'},
+  // {name: 'California', abbrev: 'CA'},
+  // {name: 'Colorado', abbrev: 'CO'},
+  // {name: 'New York', abbrev: 'NY'},
+  // {name: 'Pennsylvania', abbrev: 'PA'}];
+
+
+  constructor(private fb: FormBuilder, private ps:ProductService, public controlError: ControlErrorService, public dialog: MatDialog) {
+
+    this.FormProducts = this.fb.group({
+      title: [null, [
+        Validators.required
+      ]],
+      description: [null, [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(160)],
+    ],
+      cover: [null, [
+        Validators.required
+      ]],
+      category: [null, [
+        Validators.required
+      ]],
+      classification: [null, [
+        Validators.required
+      ]],
+    }
+    )
 
   }
 
   ngOnInit(): void {
-    console.log(this.FormProducts.value)
+
+  }
+
+  cadastrar(): void{
+    this.FormProducts.markAllAsTouched()
+    if (this.FormProducts.invalid){
+       return;
+    }
+    else{
+      console.log('sucesso')
+      this.ps.onCreate(
+        this.FormProducts.value.title,
+        this.FormProducts.value.description,
+        this.FormProducts.value.cover,
+        this.FormProducts.value.category,
+        this.FormProducts.value.classification
+      ).subscribe(() => {
+
+      })
+    }
   }
 
 
-  cadastrar(){
-    this.FormProducts.invalid ?
-      console.log('Error') :
-      console.log(this.FormProducts.value)
-  }
+}
 
+
+
+  // validator = this.FormProducts.controls.description.value == false
 
 
     // this.newProducts.valid == true ?
@@ -41,4 +84,4 @@ export class ProductsCreateComponent implements OnInit {
     // console.log('error')
 
 
-}
+

@@ -1,4 +1,4 @@
-input, input:focus, textarea, textarea:focus {
+input, input:focus, textarea, textarea:focus, select, option:focus {
   border: 2px solid #333;
 }
 label{
@@ -52,6 +52,29 @@ label{
   -moz-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
+}
+
+
+
+
+
+.teste-li{
+  background-color: #a50000;
+  border-radius: 20px;
+  width: 7rem;
+  padding-left: 1%;
+}
+.btn-remove{
+  background: #8c0101;
+  border: none;
+  color: #cacaca;
+  margin: auto 0 auto auto !important;
+  border-radius: 0 20px 20px 0;
+}
+.btn-remove:hover{
+  background: #740101;
+  color: #ffffff;
+
 }
 
 

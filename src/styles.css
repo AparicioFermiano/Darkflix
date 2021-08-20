@@ -16,6 +16,7 @@ hr{
 input, textarea{
   font-size: 1.2rem !important;
   padding: 0.5rem !important;
+  resize: none !important
 }
 
 label{
@@ -36,7 +37,7 @@ label{
 /* BUTTON */
 
 .btn-person{
-  padding: 0.6rem 1.4rem !important;
+  padding: 0 1.4rem !important;
   font-size: 1.4rem !important;
   font-weight: 500 !important;
 }
@@ -74,18 +75,18 @@ label{
 
 /* FOCUS, AFTER, ACTIVE */
 
-button:focus, button:active, button::after,
-input:focus, input:active, input::after
-{
+button:focus, button:active, button::after{
   outline: 0 !important;
   box-shadow: 0 0 0 0.15rem rgba(250, 250, 250, 0.7) !important;
 }
 
 input:focus, input:active, input::after,
-textarea:focus, textarea:active, textarea::after  {
+textarea:focus, textarea:active, textarea::after.active,
+option, option:focus, option:active, option:hover  {
   outline: 0 !important;
   box-shadow: none !important;
 }
+
 .active{
   border: none;
   font-weight: 700;

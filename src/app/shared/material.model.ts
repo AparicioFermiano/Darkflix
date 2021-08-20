@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { A11yModule } from '@angular/cdk/a11y';
 import { ClipboardModule } from '@angular/cdk/clipboard';
@@ -88,7 +89,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatTreeModule,
     OverlayModule,
     PortalModule,
-    ScrollingModule
+    ScrollingModule,
+    BrowserModule,
   ]
 })
 export class MaterialModule {}

@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'create',
     component: ProductsCreateComponent
-  }
+  },
 ];
 
 @NgModule({
