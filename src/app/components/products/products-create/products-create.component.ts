@@ -1,8 +1,8 @@
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ControlErrorService } from './../../../shared/control-error.service';
+import { ControlErrorService } from '../../../shared/control-error.service';
 import { ProductService } from './../../../services/product.service';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class ProductsCreateComponent implements OnInit {
   // {name: 'Pennsylvania', abbrev: 'PA'}];
 
 
-  constructor(private fb: FormBuilder, private ps:ProductService, public controlError: ControlErrorService, public dialog: MatDialog) {
+  constructor(private fb: FormBuilder, private ps:ProductService, public controlError: ControlErrorService) {
 
     this.FormProducts = this.fb.group({
       title: [null, [
@@ -52,27 +52,24 @@ export class ProductsCreateComponent implements OnInit {
 
   }
 
-  cadastrar(): void{
+
+  cadastrar(product: Product): void{
     this.FormProducts.markAllAsTouched()
     if (this.FormProducts.invalid){
        return;
     }
     else{
       console.log('sucesso')
-      this.ps.onCreate(
-        this.FormProducts.value.title,
-        this.FormProducts.value.description,
-        this.FormProducts.value.cover,
-        this.FormProducts.value.category,
-        this.FormProducts.value.classification
-      ).subscribe(() => {
-
+      this.ps.onCreate(product).subscribe({next: Product =>
+        {this.ps.showMessage('Produto postado com Sucesso!'), console.log('Sucess', Product)},
+        error: err => {this.ps.showMessage('Ocorreu um problema. Tente novamente!', true), console.log('Error', err)}
       })
     }
   }
 
-
 }
+
+
 
 
 

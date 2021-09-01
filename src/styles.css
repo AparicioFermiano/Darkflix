@@ -103,5 +103,27 @@ option, option:focus, option:active, option:hover  {
 .border-invalid{
   border-bottom: 2px solid #e87c03 !important;
 }
+.msg-error{
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  justify-content: center;
+  background-color: #e87c03;
+  font-weight: 600;
+  font-size: 1rem;
+  color: black;
+}
+.msg-sucess{
+  position: absolute;
+  z-index: 1000;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  justify-content: center;
+  background-color: rgba(0, 138, 11, 0.75);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
 
 

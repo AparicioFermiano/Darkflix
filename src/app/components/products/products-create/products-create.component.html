@@ -6,7 +6,7 @@
         <div class="card p-5 text-white">
           <h1 class="text-center text-white">Postando um Produto</h1>
 
-          <form class="form" [formGroup]="FormProducts" (submit)="cadastrar()" autocomplete="off" novalidate>
+          <form class="form" [formGroup]="FormProducts" (submit)="cadastrar(FormProducts.value)" autocomplete="off" novalidate>
 
             <!-- FORMS TITLE -->
             <div class="pt-4">

@@ -1,7 +1,8 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Product } from './../models/product.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,24 +10,24 @@ import { Product } from '../models/product.model';
 export class ProductService {
   products: Product[] = [];
 
+  options = {
+    responseType: 'text',
+  };
+
+
   bdURL = 'http://localhost:3000/products'
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient, private snackBar: MatSnackBar) {}
 
-  onCreate(title: any, description: any, cover: any, category: any, classification: any):Observable<any> {
-
-    const dataProduct:Product = {
-      title: title,
-      description: description,
-      cover: cover,
-      category: category,
-      classification: classification
-    }
-
-    return this.http.post<{mensagem: string, id: string}>(this.bdURL, dataProduct
-
-      )
+  onCreate(dataProduct:Product):Observable<any> {
+    return this.http.post<{ mensagem:string, id:string }>(this.bdURL, dataProduct)
   }
 
 
+  showMessage(msg: string, isError: Boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      panelClass: isError ?  ['msg-error'] : ['msg-sucess']
+    })
+  };
 }
